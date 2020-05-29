@@ -7,7 +7,7 @@ import { hash } from 'bcryptjs';
 class CreateUserService {
   constructor(private usersRepository: IUsersRepository) { }
 
-  public async create({ email, master_password }: ICreateUserDTO): Promise<User> {
+  public async create({ name, email, master_password }: ICreateUserDTO): Promise<User> {
     const checkIfUserExists = await this.usersRepository.findByEmail(email);
 
     if (checkIfUserExists) {
@@ -15,7 +15,7 @@ class CreateUserService {
     }
 
     const encryptedPassword = await hash(master_password, 8);
-    const user = await this.usersRepository.create({ email, master_password: encryptedPassword });
+    const user = await this.usersRepository.create({ name, email, master_password: encryptedPassword });
     return user;
   }
 }
