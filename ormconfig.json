@@ -1,9 +1,0 @@
-{
-  "name": "default",
-  "type": "mongodb",
-  "url": "mongodb://192.168.99.100:27017/serena",
-  "useUnifiedTopology": true,
-  "entities": [
-    "./src/modules/**/infra/typeorm/schemas/*.ts"
-  ]
-}
