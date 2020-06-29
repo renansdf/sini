@@ -4,6 +4,7 @@ import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepo
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 import { container } from 'tsyringe';
 
+
 const usersRoutes = Router();
 
 usersRoutes.post('/', async (request, response) => {
